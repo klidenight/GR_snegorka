@@ -35,7 +35,7 @@ namespace Snegorka
             {
                 if(TB_login.Text == user.Login && TB_password.Text == user.Password)
                 {
-                    System.Windows.MessageBox.Show("Test");
+                    System.Windows.MessageBox.Show("Test5");
                 }
             }
         }
