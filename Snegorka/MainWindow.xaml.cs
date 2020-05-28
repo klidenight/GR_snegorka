@@ -20,7 +20,8 @@ namespace Snegorka
     /// </summary>
     public partial class MainWindow : Window
     {
-        static MyDbContext context = new MyDbContext();
+        static DbContextLocal contextLocal = new DbContextLocal();
+        static DbContextGlobal contextGlobal = new DbContextGlobal();
 
         public MainWindow()
         {
@@ -29,7 +30,8 @@ namespace Snegorka
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = context.Users.ToList();
+            List<User> users = contextLocal.users.ToList();
+            List<User> usersG = contextGlobal.users.ToList();
 
             foreach (User user in users)
             {
@@ -37,6 +39,47 @@ namespace Snegorka
                 {
                     System.Windows.MessageBox.Show("Test5");
                 }
+            }
+        }
+
+        private void TB_login_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TB_login.Text == "Введите логин")
+            {
+                TB_login.Text = "";
+                TB_login.FontStyle = FontStyles.Normal;
+                TB_login.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TB_login_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (TB_login.Text == "")
+            {
+                TB_login.Text = "Введите логин";
+                TB_login.FontStyle = FontStyles.Italic;
+                TB_login.Foreground = Brushes.Gray;
+            }
+        }
+
+
+        private void TB_password_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TB_password.Text == "Введите пароль")
+            {
+                TB_password.Text = "";
+                TB_password.FontStyle = FontStyles.Normal;
+                TB_password.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TB_password_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (TB_password.Text == "")
+            {
+                TB_password.Text = "Введите пароль";
+                TB_password.FontStyle = FontStyles.Italic;
+                TB_password.Foreground = Brushes.Gray;
             }
         }
     }

@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Снегорка" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox Name="TB_login" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.75"/>
-        <TextBox Name="TB_password" HorizontalAlignment="Center" Margin="0,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.7"/>
-        <Button x:Name="btnAuthorization" Content="Button" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="88"/>
+        <TextBox Name="TB_login" HorizontalAlignment="Center" Margin="0,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.75" Height="23" FontSize="15" Text="Введите логин" FontStyle="Italic" GotFocus="TB_login_GotFocus" LostFocus="TB_login_LostFocus" Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        <TextBox Name="TB_password" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Opacity="0.7" Height="23" FontSize="15" Text="Введите пароль" FontStyle="Italic" Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" GotFocus="TB_password_GotFocus" LostFocus="TB_password_LostFocus"/>
+        <Button x:Name="btnAuthorization" Content="Button" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" Click="Button_Click" Height="28" Width="88"/>
         <!--<DataGrid x:Name="table"/>-->
     </Grid>
 </Window>
